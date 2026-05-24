@@ -1,0 +1,14 @@
+# dependencies (root)
+node_modules/
+
+# env (never commit secrets)
+.env
+.env*.local
+
+# OS / editor
+.DS_Store
+*.log
+
+# Next.js build output (app lives in arsis-lab/)
+arsis-lab/.next/
+arsis-lab/out/
