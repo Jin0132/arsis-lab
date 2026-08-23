@@ -1,6 +1,9 @@
 # Arsis Lab
 
-Arsis Development Ecosystem 向けの **AI コックピット**です。ニュースや記事を貼り付けると Gemini が課題化し、採用・保留・不採用を Google スプレッドシートへ記録します。
+Arsis Development Ecosystem の **全体地図**（`/map`）と、保管中の **AI 仕分け UI**（`/`）を置くリポジトリです。
+
+- **主用途**: [http://localhost:3000/map](http://localhost:3000/map) — エコシステム全体の要約（正本は `orchestra-app-1/docs/ARSIS_LAB_BRIEFING.md`）
+- **保管**: `/` の仕分け UI — ニュースを課題化し、別スプレッドシートへ記録（当面停止）
 
 ## 必要なもの
 
@@ -26,7 +29,7 @@ npm install
 | `GEMINI_API_KEY` | Gemini API キー |
 | `GOOGLE_SERVICE_ACCOUNT_EMAIL` | サービスアカウントのメール |
 | `GOOGLE_PRIVATE_KEY` | サービスアカウントの秘密鍵（PEM。`\n` を含む文字列可）。JSON 全体を貼っても可 |
-| `GOOGLE_SHEET_ID` | 書き込み先スプレッドシートの ID |
+| `GOOGLE_SHEET_ID` | Lab バックログ用スプレッドシートの ID（マスタブックとは別） |
 
 サービスアカウントに、対象シートの編集権限を付与してください。
 
@@ -40,7 +43,7 @@ npm install
 npm run dev
 ```
 
-ブラウザで [http://localhost:3000](http://localhost:3000) を開きます。
+ブラウザで [http://localhost:3000](http://localhost:3000) を開きます。全体地図（機能なし）は [http://localhost:3000/map](http://localhost:3000/map) です。
 
 | コマンド | 内容 |
 |----------|------|
@@ -58,7 +61,8 @@ arsis-lab/                 ← Git / npm のルート（この README）
 ├── arsis-lab/             ← Next.js アプリ本体
 │   ├── .env.local         ← 秘密情報（Git 管理外）
 │   ├── app/
-│   │   ├── page.tsx       ← UI（コックピット）
+│   │   ├── map/page.tsx   ← 全体地図（主用途）
+│   │   ├── page.tsx       ← 仕分け UI（保管）
 │   │   └── actions.ts     ← Gemini / Sheets 連携
 │   └── ...
 └── README.md

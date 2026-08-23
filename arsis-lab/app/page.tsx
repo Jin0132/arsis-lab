@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import {
   addToBacklog,
   analyzeNewsWithAI,
@@ -55,6 +56,12 @@ export default function LabPage() {
             AI がニュースを課題化し、採用・保留・不採用をスプレッドシートへ記録します（Arsis Development
             Ecosystem v5.0）
           </p>
+          <Link
+            href="/map"
+            className="mt-3 inline-block text-sm text-zinc-600 underline-offset-4 hover:underline dark:text-zinc-300"
+          >
+            全体地図を見る
+          </Link>
         </header>
 
         <section className="space-y-4">
