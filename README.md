@@ -45,6 +45,18 @@ npm run dev
 
 ブラウザで [http://localhost:3000](http://localhost:3000) を開きます。全体地図（機能なし）は [http://localhost:3000/map](http://localhost:3000/map) です。
 
+### 課題ボード（スプレッドシート）
+
+Lab 用シート（`GOOGLE_SHEET_ID`・ブック名「arsis-lab マスターシート」）のタブ **「課題ボード」** が、横断課題の Inbox です（マスタブックとは別）。
+
+| 列 | 意味 |
+|----|------|
+| Cursor対応 | Cursor / 実装側が完了したら ON |
+| オーナー確認 | オーナーが確認したら ON（両方 ON でクローズ） |
+
+- 優先度の目安: 高 → 中 → 低。手で行を追加してよい
+- 再シード（上書き）: `node scripts/seed-lab-tasks.mjs`（既存のチェックは消えるので注意）
+
 | コマンド | 内容 |
 |----------|------|
 | `npm run dev` | 開発サーバー |
