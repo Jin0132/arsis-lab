@@ -5,7 +5,18 @@ alwaysApply: true
 
 # 課題 Inbox → 課題ボード
 
-チャットやファイルに貼られた課題・メモ・要望は、実装せず先に **細分化してシートへ保存**する。
+チャットやファイルに貼られた **Arsis 関連** の課題・メモ・要望は、実装せず先に **細分化してシートへ保存**する。
+
+## 対象（このシートに書くもの）
+
+次の4リポジトリのファイル・アプリ改善のみ。
+
+- `arsis-lab`
+- `orchestra-app-1`（Portal）
+- `arsis-site`
+- `setting-app`
+
+**書かない:** prompt-crafts / quickask / webpage-formyfriends / event-manage-app（One Meeting）/ document-tool / Context Bridge。公演・団員の日常管理はマスタブックへ。
 
 ## 保存先
 
@@ -20,9 +31,10 @@ alwaysApply: true
 2. 既存行と重複なら ID 指定で upsert。新規なら ID はスクリプトに採番させる
 3. Cursor対応 / オーナー確認は両方 OFF のまま追加する
 4. ユーザーへ追加した ID 一覧を返す
+5. このチャットの範囲外の実装依頼なら、保存したうえで **正しいフォルダを開くよう指示**する（`.cursor/rules/chat-routing.mdc`）
 
 ## 箱（プレフィックス）
 
-Lab=`L` / Docs=`D` / Portal=`P` / setting-app=`S` / 統合=`I` / 公開サイト=`W` / Bridge=`B` / 運用=`T`
+Lab=`L` / Docs=`D` / Portal=`P` / setting-app=`S` / 統合=`I` / 公開サイト=`W` / 運用=`T`
 
-優先度は 高 / 中 / 低。公演・団員の日常管理はマスタブックへ（このシートに混ぜない）。
+優先度は 高 / 中 / 低。

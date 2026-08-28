@@ -2,8 +2,19 @@
 
 Arsis Development Ecosystem の **全体地図**（`/map`）と、保管中の **AI 仕分け UI**（`/`）を置くリポジトリです。
 
+Arsis の開発対象は次の **4リポジトリ** です。
+
+| フォルダ | 役割 |
+|----------|------|
+| `arsis-lab` | 地図・課題ボード（このリポジトリ） |
+| `orchestra-app-1` | 内部運営ポータル |
+| `arsis-site` | 公開サイト |
+| `setting-app` | セッティング表（将来 Portal へ統合） |
+
 - **主用途**: [http://localhost:3000/map](http://localhost:3000/map) — エコシステム全体の要約（正本は `orchestra-app-1/docs/ARSIS_LAB_BRIEFING.md`）
 - **保管**: `/` の仕分け UI — ニュースを課題化し、別スプレッドシートへ記録（当面停止）
+- **開発課題**: 4箱の改善はすべて下記 **課題ボード** に集約する
+- **このチャット**: 課題の受付と振り分け。Portal／公開サイト／setting-app の実装や運営ガイド本文の編集は、そのフォルダを開いたチャットへ（エージェントが案内する）
 
 ## 必要なもの
 
@@ -47,7 +58,11 @@ npm run dev
 
 ### 課題ボード（スプレッドシート）
 
-Lab 用シート（`GOOGLE_SHEET_ID`・ブック名「arsis-lab マスターシート」）のタブ **「課題ボード」** が、横断課題の Inbox です（マスタブックとは別）。
+4箱（Lab / Portal / 公開サイト / setting-app）の **開発・改善課題はここに集約**する。マスタブックや『ArsisCO 運営ガイド』には混ぜない。
+
+- ブック: Lab 用シート（`GOOGLE_SHEET_ID`・「arsis-lab マスターシート」）
+- タブ: **課題ボード**
+- 開く: [課題ボード](https://docs.google.com/spreadsheets/d/1tKo8IElmIwIU0sNcC5vAEjqcNklKjZh_oGCa9aO6QlU/edit)
 
 | 列 | 意味 |
 |----|------|
@@ -56,6 +71,7 @@ Lab 用シート（`GOOGLE_SHEET_ID`・ブック名「arsis-lab マスターシ�
 
 - 優先度の目安: 高 → 中 → 低。手で行を追加してよい
 - 再シード（上書き）: `node scripts/seed-lab-tasks.mjs`（既存のチェックは消えるので注意）
+- prompt-crafts / quickask / One Meeting など **4箱以外は書かない**
 
 | コマンド | 内容 |
 |----------|------|

@@ -1,0 +1,27 @@
+---
+description: このチャットでやること／別フォルダへ送ること
+alwaysApply: true
+---
+
+# 選別（arsis-lab）
+
+このチャットは **受付窓口**。実装の本拠ではない。
+
+## ここでやる
+
+- 口語課題を課題ボードへ細分化保存（先にシート、実装はしない）
+- どの箱かの判断、地図 `/map`、Lab の README
+- 「課題ボードの Lxx / Dxx をやって」のうち、Lab 側ファイルだけ
+
+## ここでやらない（フォルダを開き直すよう指示する）
+
+依頼が来たら **実装せず**、次を短く返す。課題なら先に課題ボードへ保存してから案内する。
+
+| 内容 | 開くフォルダ |
+|------|----------------|
+| Portal の画面・API、運営ガイド／Drive の本文編集、BRIEFING 正本 | `書類/Code_Project/orchestra-app-1` |
+| 公開サイトのページ・見た目 | `書類/Code_Project/arsis-site` |
+| セッティング表キャンバス | `書類/Code_Project/setting-app` |
+| quickask / prompt-crafts / One Meeting など | そのリポ（課題ボードには書かない） |
+
+文言例: 「これは Portal の作業です。Cursor で `orchestra-app-1` を開いて、続きをそちらで頼んでください。」

@@ -4,14 +4,14 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Arsis 全体地図",
   description:
-    "Arsis Lab / Portal / 公開サイト / setting-app / Context Bridge の役割一覧（要約）",
+    "Arsis Lab / Portal / 公開サイト / setting-app の役割一覧（要約）",
 };
 
 const PROJECTS = [
   {
     name: "Arsis Lab",
-    role: "このリポジトリ。全体地図（/map）と仕分け UI（/）",
-    note: "仕分け UI は当面停止・保管。日常は /map で全体把握",
+    role: "このリポジトリ。全体地図（/map）と仕分け UI（/）と課題ボード",
+    note: "仕分け UI は当面停止・保管。日常は /map。開発課題は課題ボードへ集約",
   },
   {
     name: "Arsis Portal",
@@ -27,11 +27,6 @@ const PROJECTS = [
     name: "公開サイト",
     role: "対外サイト",
     note: "arsis-site。Article / config を使う想定",
-  },
-  {
-    name: "Context Bridge",
-    role: "文脈共有（別プロジェクト）",
-    note: "Lab の Target 値は Bridge。詳細は各リポジトリ参照",
   },
 ] as const;
 
@@ -50,7 +45,7 @@ const ROUTES = [
   { what: "舞台上の座席・セッティング表", to: "setting-app（将来 Portal 内タブへ統合）" },
   { what: "公開サイトの記事・チケット表示", to: "arsis-site" },
   { what: "会計・送金・領収書", to: "別スプレッドシート / Drive。Portal には載せない" },
-  { what: "文脈共有", to: "Context Bridge" },
+  { what: "4箱の開発・改善課題", to: "Lab 課題ボード（シートに集約）" },
   { what: "全体把握", to: "Lab /map（このページ）" },
 ] as const;
 
@@ -65,7 +60,7 @@ export default function MapPage() {
           <h1 className="text-3xl font-bold tracking-tight">全体地図</h1>
           <p className="text-sm leading-relaxed text-zinc-500 dark:text-zinc-400">
             機能はありません。各箱の役割と正本の場所だけを示します（要約版）。最終確認日
-            2026-08-24。
+            2026-08-28。
           </p>
           <p className="text-xs text-zinc-400">
             正本:{" "}
@@ -93,13 +88,32 @@ export default function MapPage() {
             <li>
               Lab が書き込む先は <strong>別スプレッドシート</strong>（
               <code className="rounded bg-zinc-200 px-1 dark:bg-zinc-800">GOOGLE_SHEET_ID</code>
-              ）。課題の採用・保留・不採用を記録するバックログ用。
+              ）のタブ <strong>課題ボード</strong>。4箱の開発課題をここに集約する。
             </li>
             <li>
               <strong>マスタブック</strong>（『Arsis Chamber Orchestra』）とは別物。マスタブックは
               Portal / 公開サイトの運用データ正本。Lab のバックログはそこに混ぜない。
             </li>
+            <li>
+              Arsis の開発範囲は <strong>4箱</strong>（Lab / Portal / setting-app / 公開サイト）。
+              One Meeting・prompt-crafts・quickask などはここにも課題ボードにも載せない。
+            </li>
           </ul>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="text-lg font-semibold">課題ボード</h2>
+          <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">
+            4箱のファイル改善は、すべて Lab 用シートのタブ「課題ボード」に集約する。公演の日常管理はマスタブックへ。
+          </p>
+          <a
+            href="https://docs.google.com/spreadsheets/d/1tKo8IElmIwIU0sNcC5vAEjqcNklKjZh_oGCa9aO6QlU/edit"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block text-sm text-zinc-800 underline-offset-4 hover:underline dark:text-zinc-100"
+          >
+            課題ボードを開く
+          </a>
         </section>
 
         <section className="space-y-3">
@@ -135,7 +149,7 @@ setting-app ── セッティング表の新実装（localStorage → Portal �
 
 公開サイト arsis-site ── Article / config（Portal とは別）
 
-Context Bridge ── 文脈共有（別リポジトリ）`}
+課題ボード（Lab シート）── 4箱の開発課題を集約`}
           </pre>
         </section>
 
@@ -231,6 +245,7 @@ Context Bridge ── 文脈共有（別リポジトリ）`}
             <li>会計ブックは Portal 未接続。会計機能を Portal に足す提案はしない。</li>
             <li>Portal は Next.js。GAS 前提で語らない。</li>
             <li>セッティング表は setting-app で育て、Portal へ統合するまで二重実装を意識する。</li>
+            <li>開発課題は課題ボードへ。運営ガイドやマスタブックに開発 TODO を混ぜない。</li>
           </ul>
         </section>
       </main>
