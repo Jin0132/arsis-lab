@@ -1,11 +1,14 @@
 import type { NextConfig } from "next";
+import fs from "fs";
 import path from "path";
 import { loadEnvConfig } from "@next/env";
 
-// npm スクリプトは `cd arsis-lab && next *` のため cwd はこのフォルダ。
-// 一方 .env.local がリポジトリ直下にある場合、ここで親の env を読み込む。
+// ローカルは親フォルダの .env.local。Vercel はアプリ直下の環境変数。
+loadEnvConfig(process.cwd());
 const repoRoot = path.resolve(process.cwd(), "..");
-loadEnvConfig(repoRoot);
+if (fs.existsSync(path.join(repoRoot, "package.json"))) {
+  loadEnvConfig(repoRoot);
+}
 
 const nextConfig: NextConfig = {
   /* config options here */
