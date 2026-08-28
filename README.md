@@ -33,7 +33,7 @@ npm install
 
 ### 環境変数
 
-`arsis-lab/.env.local` を作成し、次を設定します（サンプルは `.env.example` を参照）。
+リポジトリ直下に `.env.local` を作成し、次を設定します（サンプルは `.env.example` を参照）。
 
 | 変数名 | 用途 |
 |--------|------|
@@ -83,16 +83,14 @@ npm run dev
 ## ディレクトリ構成
 
 ```
-arsis-lab/                 ← Git / npm のルート（この README）
-├── package.json           ← スクリプトはここから実行
+arsis-lab/                 ← Git / npm / Next.js のルート（この README）
+├── package.json
 ├── .env.example
-├── arsis-lab/             ← Next.js アプリ本体
-│   ├── .env.local         ← 秘密情報（Git 管理外）
-│   ├── app/
-│   │   ├── map/page.tsx   ← 全体地図（主用途）
-│   │   ├── page.tsx       ← 仕分け UI（保管）
-│   │   └── actions.ts     ← Gemini / Sheets 連携
-│   └── ...
+├── .env.local             ← 秘密情報（Git 管理外）
+├── app/
+│   ├── map/page.tsx       ← 全体地図（主用途）
+│   ├── page.tsx           ← 仕分け UI（保管）
+│   └── actions.ts         ← Gemini / Sheets 連携
 └── README.md
 ```
 

@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cd arsis-lab && next dev",
-    "build": "cd arsis-lab && next build",
-    "start": "cd arsis-lab && next start",
-    "lint": "cd arsis-lab && eslint ."
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",

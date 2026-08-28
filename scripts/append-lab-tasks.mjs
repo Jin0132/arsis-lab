@@ -43,7 +43,7 @@ const AREA_PREFIX = {
 };
 
 function loadEnv() {
-  const raw = readFileSync(resolve(root, "arsis-lab/.env.local"), "utf8");
+  const raw = readFileSync(resolve(root, ".env.local"), "utf8");
   const env = {};
   for (const line of raw.split(/\n/)) {
     const t = line.trim();

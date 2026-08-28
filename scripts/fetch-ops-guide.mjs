@@ -3,7 +3,7 @@ import { createPrivateKey } from "node:crypto";
 import { JWT } from "google-auth-library";
 
 const raw = readFileSync(
-  new URL("../arsis-lab/.env.local", import.meta.url),
+  new URL("../.env.local", import.meta.url),
   "utf8"
 );
 const env = {};

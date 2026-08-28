@@ -9,6 +9,9 @@ node_modules/
 .DS_Store
 *.log
 
-# Next.js build output (app lives in arsis-lab/)
-arsis-lab/.next/
-arsis-lab/out/
+# Next.js / Vercel
+.next/
+out/
+.vercel
+*.tsbuildinfo
+next-env.d.ts
