@@ -19,17 +19,6 @@ import { JWT } from "google-auth-library";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
 const TAB = "課題ボード";
-const HEADERS = [
-  "ID",
-  "箱",
-  "課題",
-  "詳細",
-  "優先度",
-  "Cursor対応",
-  "オーナー確認",
-  "メモ",
-  "更新日",
-];
 
 const AREA_PREFIX = {
   Lab: "L",
@@ -38,7 +27,6 @@ const AREA_PREFIX = {
   "setting-app": "S",
   統合: "I",
   公開サイト: "W",
-  Bridge: "B",
   運用: "T",
 };
 

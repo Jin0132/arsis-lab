@@ -8,6 +8,7 @@ node_modules/
 # OS / editor
 .DS_Store
 *.log
+scripts/.lab-tasks-dump.json
 
 # Next.js / Vercel
 .next/
